@@ -1,0 +1,31 @@
+FROM alpine:latest
+LABEL maintainer='imec-DistriNet'
+#TO RUN AND CONNECT TO THE IMAGE RUN THE FOLLOWING COMMANDS:
+#docker build -t dvd:<"name">
+#map the port being exposed at the bottom of this scripts to any ports of your choosing
+#docker run --rm -d  -p <portHOST>:<portEXPOSED> dvd:<"name"> --name <"name">
+
+#Use this name to connect to the running instance of the image:
+#docker exec -it <"name"> bash
+
+
+#If you are interested in static firmware analysis, it is possible to extract the filesystem from the image
+#using the following command:
+#docker export <name> -o <name>.tar.gz
+
+
+
+RUN apk update && apk add --no-cache bash git
+RUN git clone https://github.com/ku-leuven-msec/IoTBenchmark-Features /tmp/backend
+
+RUN chmod +x /tmp/backend/features/resources/sudo/addSudo.sh \
+  && ./tmp/backend/features/resources/sudo/addSudo.sh 
+ RUN chmod +x /tmp/backend/features/vulnerabilities/badSuidRights/env/addENV.sh \
+  && ./tmp/backend/features/vulnerabilities/badSuidRights/env/addENV.sh
+
+RUN rm -rf /tmp/*
+RUN sed -i 's/^tty/#tty/' /etc/inittab 
+
+
+
+ENTRYPOINT ["/sbin/init"]

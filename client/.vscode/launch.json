@@ -1,0 +1,18 @@
+{
+    // Debugger Tool for Firefox has to be installed: https://github.com/firefox-devtools/vscode-firefox-debug
+    // And Remote has to be enabled: https://developer.mozilla.org/en-US/docs/Tools/Remote_Debugging/Debugging_Firefox_Desktop#enable_remote_debugging
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Chrome",
+            "request": "launch",
+            "type": "chrome",
+            "url": "http://localhost:5173",
+            "webRoot": "${workspaceFolder}",
+            "runtimeExecutable": "/snap/bin/chromium",
+            "runtimeArgs": ["--new-Window", "-user-data-dir=/${workspaceFolder}/.chromeProfile", "--remote-debugging-port=9222", "--disable-bakcground-networking"],
+            
+        }
+        
+    ]
+}

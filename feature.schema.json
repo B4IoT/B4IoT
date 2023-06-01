@@ -1,0 +1,91 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "type": "object",
+    "properties": {
+      "feature": {
+        "type": "string"
+      },
+      "name": {
+        "type": "string"
+      },
+      "description": {
+        "type": "string"
+      },
+      "dependencies": {
+        "type": "array",
+        "items": [
+          {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "name"
+            ]
+          }
+        ],
+        "minimum": 1
+      },
+      "port": {
+        "type": "array",
+        "items": [
+          {
+            "type": "string"
+          }
+        ],
+        "minimum": 0,
+        "exclusiveMinimum": false,
+        "type": "string",
+        "minimum": 0,
+        "exclusiveMinimum": false
+      },
+      "type": {
+        "type": "string"
+      },
+      "family": {
+        "type": "string"
+      },
+      "vulnerabilities": {
+        "type": "array",
+        "items": [
+          {
+            "type": "string"
+          }
+        ],
+        "minimum": 0,
+        "exclusiveMinimum": false
+      },
+      "CWEs": {
+        "type": "array",
+        "items": [
+          {
+            "type": "string"
+          }
+        ],
+        "minimum": 0,
+        "exclusiveMinimum": false
+      },
+      "location": {
+        "type": "string"
+      },
+      "scripts": {
+        "type": "object",
+        "properties": {
+          "install": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "install"
+        ]
+      }
+    },
+    "required": [
+      "feature",
+      "name",
+      "description",
+      "scripts"
+    ]
+  }

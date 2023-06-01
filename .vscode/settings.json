@@ -1,0 +1,12 @@
+{
+    "docker.dockerPath": "/usr/local/bin/docker",
+    "json.schemas": [
+        {
+          "fileMatch": [
+            "features.json"
+          ],
+          "url": "/client/src/schema/features.schema.json"
+          
+        },
+      ]
+}

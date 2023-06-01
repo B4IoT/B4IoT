@@ -1,0 +1,83 @@
+{
+    "$schema": "https://json-schema.org/draft-07/schema",
+    "$id": "https://b4IoT.com/features.schema.json",
+    "title": "Feature Repository",
+    "description": "A Feature Repository Schema",
+    "type": "object",
+    "properties": {
+        "location": {
+            "type": "string"
+        },
+        "featuresPath": {
+            "type": "string"
+        },
+        "features": {
+            "type": "array",
+            "description": "list of Features",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "feature": {
+                        "type": "string"
+                    },
+                    "name": {
+                        "type": "string"
+                    },
+                    "display_name": {
+                        "type": "string"
+                    },
+                    "description": {
+                        "type": "string"
+                    },
+                    "dependencies": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {},
+                            "additionalProperties": {
+                                "type": "string"
+                            }
+                        },
+                        "uniqueItems": true
+                    },
+                    "scripts": {
+                        "type": "object",
+                        "properties": {
+                            "build": {
+                                "type": "string"
+                            },
+                            "install": {
+                                "type": "string"
+                            },
+                            "path":{
+                                "type":"string"
+                            }
+                        },
+                        "additionalProperties": false,
+                        "required": [
+                            "install"
+                        ]
+                    },
+                    "vulnerabilities": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    }
+                },
+                "additionalProperties": true,
+                "required": [
+                    "feature",
+                    "name",
+                    "description"
+                ]
+            },
+            "minItems": 1,
+            "uniqueItems": true
+        }
+    },
+    "required": [
+        "features",
+        "location"
+    ]
+}
