@@ -42,4 +42,5 @@ The features repository can be found [here](https://github.com/B4IoT/B4IoT-Featu
 
 
 ## Public Site
+Visit the generator at: [https://b4iot.github.io/B4IoT](https://b4iot.github.io/B4IoT)
 The web application is available by hosting the **_index.html_** file in the **_client/dist_**.
