@@ -38,7 +38,7 @@ Run the following commands to create a dynamic instance of your Dockerfile (in a
 > docker exec -it <"name"> bash
 
 ### Features repository
-The features repository can be found [here](https://github.com/ku-leuven-msec/IoTBenchmark-Features)
+The features repository can be found [here](https://github.com/B4IoT/B4IoT-Features)
 
 
 ## Public Site
